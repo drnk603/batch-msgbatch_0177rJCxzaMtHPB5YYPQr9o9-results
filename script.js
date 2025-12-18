@@ -206,11 +206,11 @@
                 message: 'Bitte geben Sie einen gültigen Nachnamen ein (2-50 Zeichen, nur Buchstaben)'
             },
             email: {
-                pattern: /^[^s@]+@[^s@]+.[^s@]+$/,
+                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 message: 'Bitte geben Sie eine gültige E-Mail-Adresse ein'
             },
             phone: {
-                pattern: /^[ds+-()]{10,20}$/,
+                pattern: /^[\d\s+\-()]{10,20}$/,
                 message: 'Bitte geben Sie eine gültige Telefonnummer ein (10-20 Zeichen)'
             },
             message: {
@@ -528,136 +528,3 @@
     }
 
 })();
-# style.css (дополнение)
-
-.u-no-scroll {
-  overflow: hidden;
-  height: 100vh;
-}
-
-.navbar-collapse {
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-to-top {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.scroll-to-top:hover {
-  background: var(--color-primary-hover) !important;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.card,
-.c-card {
-  animation: fadeInUp 0.6s ease-out backwards;
-}
-
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
-.card:nth-child(4) { animation-delay: 0.4s; }
-
-.hero-content {
-  animation: fadeIn 1s ease-out;
-}
-
-.btn,
-.c-button {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn:active,
-.c-button:active {
-  transform: scale(0.95);
-}
-
-.form-control:focus,
-.form-select:focus,
-.c-form__input:focus {
-  animation: inputFocus 0.3s ease-out;
-}
-
-@keyframes inputFocus {
-  0% {
-    box-shadow: 0 0 0 0 rgba(44, 95, 45, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.15);
-  }
-}
-
-.is-invalid {
-  animation: shake 0.4s ease-in-out;
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-  20%, 40%, 60%, 80% { transform: translateX(5px); }
-}
-
-.card-img-top {
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.spinner-border {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  vertical-align: text-bottom;
-  border: 0.15em solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: spinner-border 0.75s linear infinite;
-}
-
-@keyframes spinner-border {
-  to { transform: rotate(360deg); }
-}
-
-.spinner-border-sm {
-  width: 0.875rem;
-  height: 0.875rem;
-  border-width: 0.125em;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card,
-  .c-card,
-  .hero-content {
-    animation: none !important;
-  }
-}
